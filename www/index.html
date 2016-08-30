@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
-
-
+    <title>CrushRoutesApp</title>
 
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -16,40 +14,30 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
 
-
-    <style type="text/css">
-      .platform-ios .manual-ios-statusbar-padding{
-        padding-top:20px;
-      }
-      .manual-remove-top-padding{
-        padding-top:0px;
-      }
-      .manual-remove-top-padding .scroll{
-        padding-top:0px !important;
-      }
-      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
-        margin-left:-10px;
-        margin-right:-10px;
-      }
-      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
-        border-radius:0px;
-        border-left:0px;
-        border-right: 0px;
-      }
-    </style>
-
+    <!-- module -->
     <script src="js/module/app.js"></script>
-    <script src="js/controllers/controllers.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/AddRouteService.js"></script>
+    <script src="js/services/LoginService.js"></script>
+    <script src="js/services/MapService.js"></script>
+    <script src="js/services/RouteListService.js"></script>
+    <script src="js/services/SignupService.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/LoginController.js"></script>
+    <script src="js/controllers/SignupController.js"></script>
+    <script src="js/controllers/MapController.js"></script>
+    <script src="js/controllers/RouteListController.js"></script>
+    <script src="js/controllers/AddRouteController.js"></script>
+
+    <!-- Routes -->
     <script src="js/routes/routes.js"></script>
 
-
+    <!-- Directives -->
     <script src="js/directives/directives.js"></script>
-
-    <script src="js/services/services.js"></script>
-
 
     <!-- Only required for Tab projects w/ pages in multiple tabs
     <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
