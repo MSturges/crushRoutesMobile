@@ -1,13 +1,18 @@
-<ion-view title="Add Route" id="page2">
-    <ion-content padding="true" class="has-header">
-        <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
-        <form id="addRoute-form2" class="list">
-            <label class="item item-input" id="addRoute-input2">
-                <span class="input-label">Input</span>
-                <input type="text" placeholder="">
-            </label>
-        </form>
-    </ion-content>
+<ion-view title="addRoute">
+  <ion-content padding="true" class="has-header">
+
+
+    <img id='imgDisplay' ng-if='picTaken' ng-src="{{pictureData}}">
+    <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo'>
+
+    <hr>
+
+    <input ng-click='takeLocation()' class="button button-block" id='takePhoto' type="button" value='Take Location'>
+
+      <h1>Lat: {{lng}}</h1>
+      <h2>Lng: {{lat}}</h2>
+
+
+
+  </ion-content>
 </ion-view>

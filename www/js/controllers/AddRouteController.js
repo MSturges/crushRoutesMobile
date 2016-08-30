@@ -1,9 +1,41 @@
 angular.module('app')
 
-.controller('addRouteCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('addRouteCtrl', ['$scope', '$stateParams', 'TakePhotoService', 'TakeLocationService',
+function ($scope, $stateParams, TakePhotoService, TakeLocationService) {
+
+  $scope.picTaken = false;
+  $scope.locationTaken = false;
+  $scope.pictureData = true;
+  $scope.lng = 'hello';
+  $scope.lat = 'hi';
+
+
+
+  $scope.takePhoto = function () {
+    TakePhotoService.takePhoto()
+    .then(function(data){
+      $scope.pictureData = "data:image/jpeg;base64," + data;
+      $scope.picTaken = true;
+    })
+    .catch(function(err){
+    })
+  }
+
+
+
+  $scope.takeLocation = function () {
+    TakeLocationService.takeLocation()
+    .then(function(data){
+      $scope.lng = data.coords.longitude;
+      $scope.lat = data.coords.latitude;
+
+    })
+    .catch(function(err){
+    })
+  }
+
+
+
 
 
 }])
