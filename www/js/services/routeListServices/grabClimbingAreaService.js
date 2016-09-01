@@ -8,16 +8,24 @@
     '$log',
     '$q',
     '$http',
-    '$window'
+    '$window',
+    'HostService'
 
   ];
 
-  function GrabClimbingArea ($log, $q, $http, $window) {
+  function GrabClimbingArea ($log, $q, $http, $window, HostService) {
 
-    this.grabClimbngArea = function () {
-
-
-    }
+    this.grabAreas = function() {
+    var deferred = $q.defer();
+    $http.get('http://Max-Sturges.local:3000' + '/listClimbing')
+    .then(function(success){
+      deferred.resolve(success)
+    })
+    .catch(function(err) {
+      deferred.reject(err);
+    })
+    return deferred.promise;
+  }
 
 
 

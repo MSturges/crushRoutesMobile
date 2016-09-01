@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('addRouteCtrl', ['$scope', '$stateParams', 'TakePhotoService', 'TakeLocationService',
-function ($scope, $stateParams, TakePhotoService, TakeLocationService) {
+.controller('addRouteCtrl', ['$scope', '$stateParams', 'TakePhotoService', 'TakeLocationService','s3Service',
+function ($scope, $stateParams, TakePhotoService, TakeLocationService, s3Service) {
 
   $scope.picTaken = false;
   $scope.locationTaken = false;
@@ -16,6 +16,22 @@ function ($scope, $stateParams, TakePhotoService, TakeLocationService) {
     .then(function(data){
       $scope.pictureData = "data:image/jpeg;base64," + data;
       $scope.picTaken = true;
+
+
+
+
+      // beginning
+      s3Service.uploads3Image(data)
+      .then(function(response) {
+        console.log('RESPONSE S3', response);
+      })
+      .catch(function(err) {
+        console.log('ERROR!!!!');
+      })
+      // end
+
+
+
     })
     .catch(function(err){
     })

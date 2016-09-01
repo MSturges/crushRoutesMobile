@@ -9,21 +9,22 @@
     '$q',
     '$http',
     '$window',
-    '$cordovaCamera'
+    '$cordovaCamera',
+    'HostService'
   ];
 
-  function TakePhotoService ($log, $q, $http, $window, $cordovaCamera) {
+  function TakePhotoService ($log, $q, $http, $window, $cordovaCamera, HostService) {
+
+
 
     this.takePhoto = function() {
 
       var deferred = $q.defer();
       var options = {
         allowEdit : true,
-        targetWidth: 500,
-        targetHeight: 500,
         destinationType: Camera.DestinationType.DATA_URL,
         encodingType: Camera.EncodingType.JPEG,
-        quality: 60
+        quality: 100
       };
 
       $cordovaCamera.getPicture(options)
