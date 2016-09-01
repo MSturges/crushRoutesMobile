@@ -14,7 +14,7 @@ angular.module('app')
     url: '/addRoute',
     views: {
       'tab3': {
-        templateUrl: 'templates/addRoute.html',
+        templateUrl: 'templates/tabsTemplates/addRoute.html',
         controller: 'addRouteCtrl'
       }
     }
@@ -24,7 +24,7 @@ angular.module('app')
     url: '/routeList',
     views: {
       'tab2': {
-        templateUrl: 'templates/routeList.html',
+        templateUrl: 'templates/tabsTemplates/routeList.html',
         controller: 'routeListCtrl'
       }
     }
@@ -34,7 +34,7 @@ angular.module('app')
     url: '/Map',
     views: {
       'tab1': {
-        templateUrl: 'templates/map.html',
+        templateUrl: 'templates/tabsTemplates/map.html',
         controller: 'mapCtrl'
       }
     }
@@ -42,19 +42,19 @@ angular.module('app')
 
   .state('tab', {
     url: '/tab',
-    templateUrl: 'templates/tab.html',
+    templateUrl: 'templates/tabsTemplates/tab.html',
     abstract:true
   })
 
   .state('login', {
     url: '/login',
-    templateUrl: 'templates/login.html',
+    templateUrl: 'templates/authTemplates/login.html',
     controller: 'loginCtrl'
   })
 
   .state('signup', {
     url: '/signup',
-    templateUrl: 'templates/signup.html',
+    templateUrl: 'templates/authTemplates/signup.html',
     controller: 'signupCtrl'
   })
 
