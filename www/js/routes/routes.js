@@ -58,7 +58,7 @@ angular.module('app')
     controller: 'signupCtrl'
   })
 
-  $urlRouterProvider.otherwise('/tab/addRoute')
+  $urlRouterProvider.otherwise('/login')
 
 
 
