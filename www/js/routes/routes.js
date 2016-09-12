@@ -20,15 +20,15 @@ angular.module('app')
     }
   })
 
-  .state('tab.routeList', {
-    url: '/routeList',
-    views: {
-      'tab2': {
-        templateUrl: 'templates/tabsTemplates/routeList.html',
-        controller: 'routeListCtrl'
-      }
-    }
-  })
+  // .state('tab.routeList', {
+  //   url: '/routeList',
+  //   views: {
+  //     'tab2': {
+  //       templateUrl: 'templates/tabsTemplates/routeList.html',
+  //       controller: 'routeListCtrl'
+  //     }
+  //   }
+  // })
 
   .state('tab.map', {
     url: '/Map',
@@ -36,6 +36,16 @@ angular.module('app')
       'tab1': {
         templateUrl: 'templates/tabsTemplates/map.html',
         controller: 'mapCtrl'
+      }
+    }
+  })
+
+  .state('tab.routeList', {
+    url: '/routeList',
+    views: {
+      'tab2': {
+        templateUrl: 'templates/tabsTemplates/routeList.html',
+        controller: 'routeListCtrl'
       }
     }
   })

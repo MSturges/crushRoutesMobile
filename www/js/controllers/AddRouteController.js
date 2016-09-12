@@ -9,8 +9,6 @@ function ($scope, $stateParams, TakePhotoService, TakeLocationService, s3Service
   $scope.lng = 'hello';
   $scope.lat = 'hi';
 
-
-
   $scope.takePhoto = function () {
     TakePhotoService.takePhoto()
     .then(function(data){

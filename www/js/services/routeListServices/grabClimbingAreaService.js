@@ -15,17 +15,29 @@
 
   function GrabClimbingArea ($log, $q, $http, $window, HostService) {
 
+    // this.grabAreas = function() {
+    //   var deferred = $q.defer();
+    //   $http.get('http://api.pixplorer.co.uk/image?word=cars')
+    //   .then(function(res){
+    //       deferred.resolve(res)
+    //   })
+    //   .catch(function(err) {
+    //     deferred.reject(err);
+    //   })
+    //   return deferred.promise;
+    // }
+
     this.grabAreas = function() {
-    var deferred = $q.defer();
-    $http.get('http://Max-Sturges.local:3000' + '/listClimbing')
-    .then(function(success){
-      deferred.resolve(success)
-    })
-    .catch(function(err) {
-      deferred.reject(err);
-    })
-    return deferred.promise;
-  }
+      var deferred = $q.defer();
+      $http.get('http://Max-Sturges.local:3000/listClimbing')
+      .then(function(success){
+        deferred.resolve(success)
+      })
+      .catch(function(err) {
+        deferred.reject(err);
+      })
+      return deferred.promise;
+    }
 
 
 

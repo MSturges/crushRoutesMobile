@@ -5,5 +5,6 @@ angular.module('app')
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+$scope.balls = "hello i am balls";
 
 }])
