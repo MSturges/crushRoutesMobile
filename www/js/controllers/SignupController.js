@@ -15,7 +15,7 @@ function ($scope, $stateParams, $state, SignupService) {
     SignupService.createUser($scope.user)
     .then(function(){
       console.log('jisfdsf');
-      $state.go('tab.addRoute');
+      $state.go('tab.routeList');
     })
     .catch(function(err){
       console.log('hi');

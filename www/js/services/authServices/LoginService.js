@@ -21,10 +21,8 @@
         if (response.data.error) {
           deferred.reject(response.data.error);
         } else if(response.data.token && response.data.user){
-
           $window.localStorage.setItem('token', response.data.token);
           $window.localStorage.setItem('user', JSON.stringify(response.data.user));
-
           deferred.resolve(response);
         }
       })

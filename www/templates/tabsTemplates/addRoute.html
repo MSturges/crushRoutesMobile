@@ -1,59 +1,89 @@
 <ion-view title="Add Route">
   <ion-content padding="true" class="has-header">
 
+    <form name='addClimbForm' ng-submit='addMarker()' novalidate>
 
-    <div class="list list-inset">
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Climbing Area:</span>
-        <input type="text" placeholder="Climbing Area">
-      </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Climbing Area:</span>
+          <input type="text" name="climbing_area" ng-model='values.climbing_area'ng-maxlength="30" required placeholder="Climbing Area"><br>
+        </label>
 
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Route Name:</span>
-        <input type="text" placeholder="Route Name">
-      </label>
+        <div ng-messages="addClimbForm.climbing_area.$error">
+          <div ng-message="required">* Climbing area required!</div>
+          <div ng-message="maxlength">* Climbing Area must be less than 30 characters</div>
+        </div>
 
-    </div>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Route Name:</span>
+          <input type="text" name="route_name" ng-model='values.route_name' ng-maxlength="30" required placeholder="Route Name"><br>
+        </label>
+
+        <div ng-messages="addClimbForm.route_name.$error">
+          <div ng-message="required">* Route name required!</div>
+          <div ng-message="maxlength">* Route name must be less than 30 characters</div>
+        </div>
+
+        <img id='imgDisplay' ng-if='picTaken' ng-src="{{pictureData}}">
+        <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo' ng-model='values.picture_url' require placeholder="Description">
+
+        <!-- <div ng-messages="addClimbForm.picture_url.$error">
+          <div ng-message="required">* Route name required!</div>
+        </div> -->
 
 
-    <div class="item item-body">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Description:</span>
+          <input type="text" name="description" ng-model='values.description' ng-maxlength="50" required placeholder="Description">
+        </label>
 
-      <img id='imgDisplay' ng-if='picTaken' ng-src="{{pictureData}}">
-      <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo'>
+        <div ng-messages="addClimbForm.description.$error">
+          <div ng-message="required">description required!</div>
+          <div ng-message="maxlength">Description must be less than 50 characters</div>
+        </div>
 
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Description:</span>
-        <input type="text" placeholder="Description">
-      </label>
 
-      <!-- <p>
-        <a href="#" class="subdued">1 Like</a>
-        <a href="#" class="subdued">5 Comments</a>
-      </p> -->
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Type
+          </div>
+          <!-- <select ng-model="values.climb_type"> -->
+          <select>
 
-      <label class="item item-input item-select">
-  <div class="input-label">
-    Lightsaber
-  </div>
-  <select>
-    <option>Blue</option>
-    <option selected>Green</option>
-    <option>Red</option>
-  </select>
-</label>
+            <!-- <option ng-repeat="type in types" ng-change='updateGrades(type.abbrev)' value="{{type.abbrev}}">{{type.abbrev}}</option> -->
 
-    </div>
+            <option selected ng-click="updateGrades('Rock')"> Rock</option>
+            <option ng-click="updateGrades('Boulder')"> Boulder</option>
+            <option ng-click="updateGrades('Ice')"> Ice</option>
+
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Grade
+          </div>
+          <select ng-model="values.climb_grade">
+            <option ng-repeat="grade in grades" class='menuDropdownOption' value="{{grade.abbrev}}">{{grade.abbrev}}</option>
+          </select>
+        </label>
+
+
+      <md-button id="addClimbFormBtn" class="md-raised md-warn" ng-disabled="addClimbForm.$invalid" type="submit"><span ng-bind='checkValidity(addClimbForm.$invalid)'></span></md-button>
+
+      <button ng-disabled="addClimbForm.$invalid" type="submit" class="button button-stable  button-block">Add Route</button>
+
+    </form>
 
 
     <!-- <img id='imgDisplay' ng-if='picTaken' ng-src="{{pictureData}}">
     <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo'> -->
 
-    <hr>
 
-    <input ng-click='takeLocation()' class="button button-block" id='takePhoto' type="button" value='Take Location'>
+
+    <!-- <input ng-click='takeLocation()' class="button button-block" id='takePhoto' type="button" value='Take Location'>
 
     <h1>Lat: {{lng}}</h1>
-    <h2>Lng: {{lat}}</h2>
+    <h2>Lng: {{lat}}</h2> -->
 
 
   </ion-content>

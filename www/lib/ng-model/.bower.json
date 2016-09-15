@@ -1,0 +1,31 @@
+{
+  "name": "ng-model",
+  "description": "This module has the function to collect objects from view, facilitating the bind-to-bind",
+  "keywords": [
+    "angular",
+    "model",
+    "js",
+    "front-end",
+    "web"
+  ],
+  "homepage": "https://github.com/miamarti/ng-model",
+  "main": "dist/ng-model-1.0.1.min.js",
+  "ignore": [
+    "/.*",
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md"
+  ],
+  "_release": "735e43e2aa",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "735e43e2aa9e4357be81b243f8a7be55012c57b9"
+  },
+  "_source": "https://github.com/miamarti/ng-model.git",
+  "_target": "*",
+  "_originalSource": "ng.model",
+  "_direct": true
+}

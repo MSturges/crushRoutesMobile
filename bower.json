@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "ngCordova": "^0.1.27-alpha",
-    "angular-messages": "^1.5.8"
+    "angular-messages": "^1.5.8",
+    "ng-model": "ng.model#*"
   },
   "resolutions": {
     "angular": "1.5.3"

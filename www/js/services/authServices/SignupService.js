@@ -24,7 +24,7 @@
         } else if(response.data.token && response.data.user){
           $window.localStorage.setItem('token', response.data.token);
           $window.localStorage.setItem('user', JSON.stringify(response.data.user));
-          $state.go('tab.addRoute');
+          $state.go('tab.routeList');
         }
       })
       .catch(function(err){

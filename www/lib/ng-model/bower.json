@@ -1,0 +1,22 @@
+{
+  "name": "ng-model",
+  "description": "This module has the function to collect objects from view, facilitating the bind-to-bind",
+  "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "model",
+    "js",
+    "front-end",
+    "web"
+  ],
+  "homepage": "https://github.com/miamarti/ng-model",
+  "main": "dist/ng-model-1.0.1.min.js",
+  "ignore": [
+    "/.*",
+    "**/.*",
+    "build",
+    "speed",
+    "test",
+    "*.md"
+  ]
+}
