@@ -8,15 +8,15 @@
     '$log',
     '$q',
     '$http',
-    '$window'
-
+    '$window',
+    'HostService'
   ];
 
-  function LoginService ($log, $q, $http, $window) {
+  function LoginService ($log, $q, $http, $window, HostService) {
 
     this.userLogin = function(loginObject) {
       var deferred = $q.defer();
-      $http.post('/auth/login', loginObject)
+      $http.post( 'http://Max-Sturges.local:3000' + '/auth/login', loginObject)
       .then(function (response) {
         if (response.data.error) {
           deferred.reject(response.data.error);
