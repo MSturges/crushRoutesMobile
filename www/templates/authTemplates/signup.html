@@ -1,19 +1,36 @@
 <ion-view title="Signup" id="page6">
-    <ion-content padding="true" class="has-header">
+  <ion-content padding="true" class="has-header">
 
-        <form id="signup-form4" class="list">
-            <ion-list id="signup-list3">
-                <label class="item item-input" id="signup-input6">
-                    <span class="input-label">Username</span>
-                    <input type="text" placeholder="">
-                </label>
-                <label class="item item-input" id="signup-input7">
-                    <span class="input-label">Password</span>
-                    <input type="text" placeholder="">
-                </label>
-            </ion-list>
-            <button id="signup-button3" class="button button-stable  button-block">Sign up</button>
-        </form>
+    <form id="signup-form4" class="list" name="signupForm" ng-submit="createUser()">
+      <ion-list id="signup-list3">
 
-    </ion-content>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">User Name</span>
+          <input type="text" required="" name="userName" ng-minlength="6" ng-maxlength="26" ng-model="user.user_name" placeholder="User Name">
+        </label>
+
+        <label class="item item-input item-floating-label" id="signup-input7">
+          <span class="input-label">Password</span>
+          <input type="password" required="" name="password" ng-minlength="6" ng-maxlength="26" ng-model="user.password" placeholder="Password">
+        </label>
+
+        <div ng-messages="signupForm.userName.$error">
+          <div ng-message="* required">User Name Required</div>
+          <div ng-message="* minlength">User Name must be 6 characters long</div>
+          <div ng-message="* maxlength">User Name must be less than 20 characters long</div>
+        </div>
+
+        <div ng-messages="signupForm.password.$error">
+          <div ng-message="* required">Password Required</div>
+          <div ng-message="* minlength">User Password must be 6 characters long</div>
+          <div ng-message="* maxlength">User Password must be less than 20 characters long</div>
+        </div>
+
+        <h3>{{signupError}}</h3>
+
+      </ion-list>
+      <button id="signup-button3" class="button button-stable  button-block" ng-disabled="signupForm.$invalid" type="submit">Sign up</button>
+    </form>
+
+  </ion-content>
 </ion-view>

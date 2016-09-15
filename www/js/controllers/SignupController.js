@@ -1,10 +1,27 @@
 angular.module('app')
 
 
-.controller('signupCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('signupCtrl', ['$scope', '$stateParams', '$state', 'SignupService',
+
+function ($scope, $stateParams, $state, SignupService) {
+
+  $scope.user = {
+    user_name: null,
+    password: null,
+  };
+
+  $scope.createUser = function () {
+    console.log('user', $scope.user);
+    SignupService.createUser($scope.user)
+    .then(function(){
+      console.log('jisfdsf');
+      $state.go('tab.addRoute');
+    })
+    .catch(function(err){
+      console.log('hi');
+      $scope.signupError = err;
+    })
+  }
 
 
 }])
