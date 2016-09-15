@@ -14,8 +14,6 @@ function($scope, $stateParams, GrabClimbingArea, $window) {
     console.log(err);
   })
 
-  $scope.test = $window.localStorage.getItem('token');
-  $scope.test2 = $window.localStorage.getItem('user');
 
 
 }
