@@ -10,15 +10,17 @@
 
       <label class="item item-input item-floating-label">
         <span class="input-label">Route Name:</span>
-        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="Route Name">
       </label>
 
     </div>
 
 
     <div class="item item-body">
+
       <img id='imgDisplay' ng-if='picTaken' ng-src="{{pictureData}}">
       <input ng-click='takePhoto()' class="button button-block" id='takePhoto' type="button" value='Take Photo'>
+
       <label class="item item-input item-floating-label">
         <span class="input-label">Description:</span>
         <input type="text" placeholder="Description">
@@ -28,6 +30,17 @@
         <a href="#" class="subdued">1 Like</a>
         <a href="#" class="subdued">5 Comments</a>
       </p> -->
+
+      <label class="item item-input item-select">
+  <div class="input-label">
+    Lightsaber
+  </div>
+  <select>
+    <option>Blue</option>
+    <option selected>Green</option>
+    <option>Red</option>
+  </select>
+</label>
 
     </div>
 

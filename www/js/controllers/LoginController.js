@@ -1,9 +1,20 @@
 angular.module('app')
 
 
-.controller('loginCtrl', ['$scope', '$stateParams', 
+.controller('loginCtrl', ['$scope', '$stateParams', 'LoginService',
 
-function ($scope, $stateParams) {
+function ($scope, $stateParams, LoginService) {
+
+  $scope.login = function () {
+    LoginService.userLogin($scope.login)
+    .then(function(res){
+      $scope.login = {};
+      $state.go('home');
+    })
+    .catch(function(err){
+      $scope.loginError = err;
+    })
+  }
 
 
 }])
